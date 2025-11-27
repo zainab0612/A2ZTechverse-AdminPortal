@@ -1,7 +1,7 @@
 import { Card, CardTitle, CardDescription, CardAction, CardHeader } from "@/components/ui/card";
 import { LucideIcon } from "lucide-react";
 
-interface KpiCardProps {
+type KpiCardProps = {
     title: string;
     value: string | number;
     icon: LucideIcon;

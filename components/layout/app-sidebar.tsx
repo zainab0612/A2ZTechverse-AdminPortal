@@ -23,8 +23,8 @@ import { Button } from "../ui/button";
 const items = [
     { title: "Dashboard", url: "/dashboard", icon: Home },
     { title: "Tables", url: "/tables", icon: Inbox },
-    { title: "Billing", url: "/billing", icon: Calendar },
-    { title: "Settings", url: "/rtl", icon: Settings },
+    { title: "Billing", url: "/billings", icon: Calendar },
+    { title: "Settings", url: "/settings", icon: Settings },
 ];
 
 export function AppSidebar() {

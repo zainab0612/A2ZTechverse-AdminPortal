@@ -13,7 +13,7 @@ import {
     DropdownMenuItem,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { Check, EllipsisVertical } from 'lucide-react';
+import { EllipsisVertical } from 'lucide-react';
 import { Button } from '../ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Progress } from "@/components/ui/progress"
@@ -88,7 +88,7 @@ export const ProjectTable = ({ variant, showMembers, actions, menu, status, desc
         <>
             <Card className={`rounded-2xl p-6 shadow-2xl w-full ${bgClass}`}>
                 <div className="flex justify-between mb-6">
-                    <CardHeader className='p-0 flex flex-col'>
+                    <CardHeader className='p-0 flex flex-col w-full'>
                         <CardTitle className="font-bold text-xl">Projects</CardTitle>
                         {description && (
                             <CardDescription className="font-bold text-sm text-white/70">

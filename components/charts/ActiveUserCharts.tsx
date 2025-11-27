@@ -8,48 +8,10 @@ import {
     CardTitle,
 } from "@/components/ui/card"
 import { Progress } from "@/components/ui/progress";
-import { BarChart, Bar, ResponsiveContainer, XAxis, YAxis, Tooltip } from "recharts";
-import { Users, MousePointer2, ShoppingCart, Package } from "lucide-react";
+import { BarChart, Bar, XAxis, YAxis, Tooltip } from "recharts";
 import { ChartConfig, ChartContainer } from "../ui/chart";
+import { kpiData, monthData } from "@/lib/ActiveUser";
 
-const data = [
-    { month: "Jan", value: 300 },
-    { month: "Feb", value: 240 },
-    { month: "Mar", value: 120 },
-    { month: "Apr", value: 290 },
-    { month: "May", value: 480 },
-    { month: "Jun", value: 330 },
-    { month: "Jul", value: 270 },
-    { month: "Aug", value: 110 },
-    { month: "Sep", value: 460 },
-];
-
-const kpiData = [
-    {
-        label: "Users",
-        value: "32,984",
-        progress: 80,
-        icon: Users,
-    },
-    {
-        label: "Clicks",
-        value: "2,42M",
-        progress: 60,
-        icon: MousePointer2,
-    },
-    {
-        label: "Sales",
-        value: "2,400$",
-        progress: 70,
-        icon: ShoppingCart,
-    },
-    {
-        label: "Items",
-        value: "320",
-        progress: 50,
-        icon: Package,
-    },
-];
 const chartConfig = {
     value: {
         label: "Sales",
@@ -63,7 +25,7 @@ export default function ActiveUsersCard() {
 
             <div className="w-full h-[260px] rounded-2xl px-4">
                 <ChartContainer config={chartConfig} className="h-[280px] w-full">
-                    <BarChart data={data} barCategoryGap={'40%'}>
+                    <BarChart data={monthData} barCategoryGap={'40%'}>
                         <XAxis
                             dataKey="month"
                             stroke="#ffffff90"
