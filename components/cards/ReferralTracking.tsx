@@ -1,0 +1,79 @@
+"use client";
+
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { EllipsisIcon } from "lucide-react";
+import { RadialBarChart, RadialBar, ResponsiveContainer } from "recharts";
+import { Button } from "../ui/button";
+
+const scoreData = [{ value: 93, fill: "url(#gradient)" }];
+const referralStats = [
+    {
+        title: "Invited",
+        value: "145 people",
+    },
+    {
+        title: "Bonus",
+        value: "1,465",
+    },
+];
+
+
+export function ReferralTrackingCard() {
+    return (
+        <Card className="w-full h-64 rounded-2xl bg-linear-to-r from-[#0d0f24] to-[#185672] border-none p-6 shadow-xl gap-3">
+
+            <CardHeader className="flex justify-between items-center p-0">
+                <CardTitle className="text-lg font-bold tracking-tight">Referral Tracking</CardTitle>
+                <Button variant="transparent" className="cursor-pointer text-gray-300">
+                    <EllipsisIcon />
+                </Button>
+            </CardHeader>
+
+            <div className="flex justify-between items-center h-[200px]">
+                <div className="w-[50%] space-y-2">
+                    {referralStats.map((item, index) => (
+                        <Card key={index} className="bg-[#0d1224]/90 backdrop-blur-xl border-none rounded-2xl p-3 shadow-lg flex flex-row justify-between items-center">
+                            <CardContent className="p-0">
+                                <CardTitle className="text-sm text-white/70 mb-1">{item.title}</CardTitle>
+                                <CardDescription>
+                                    <div className="text-lg font-bold text-white">
+                                        {item.value}
+                                    </div>
+                                </CardDescription>
+                            </CardContent>
+                        </Card>
+
+                    ))}
+                </div>
+                {/* 
+                <div className="relative w-40 h-40">
+                    <svg width="0" height="0">
+                        <defs>
+                            <linearGradient id="gradient" x1="0" x2="1" y1="0" y2="1">
+                                <stop offset="0%" stopColor="#00ffbd" />
+                                <stop offset="100%" stopColor="#0077ff" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+
+                    <ResponsiveContainer>
+                        <RadialBarChart
+                            data={scoreData}
+                            innerRadius="70%"
+                            outerRadius="100%"
+                            startAngle={180}
+                            endAngle={0}
+                        >
+                            <RadialBar dataKey="value" cornerRadius={30} />
+                        </RadialBarChart>
+                    </ResponsiveContainer>
+
+                    <div className="absolute inset-0 flex flex-col items-center justify-center">
+                        <p className="text-4xl font-bold">9.3</p>
+                        <p className="text-sm text-white/60">Total Score</p>
+                    </div>
+                </div> */}
+            </div>
+        </Card>
+    );
+}
