@@ -21,7 +21,6 @@ const referralStats = [
 export function ReferralTrackingCard() {
     return (
         <Card className="w-full h-64 rounded-2xl bg-linear-to-r from-[#0d0f24] to-[#185672] border-none p-6 shadow-xl gap-3">
-
             <CardHeader className="flex justify-between items-center p-0">
                 <CardTitle className="text-lg font-bold tracking-tight">Referral Tracking</CardTitle>
                 <Button variant="transparent" className="cursor-pointer text-gray-300">
@@ -29,18 +28,18 @@ export function ReferralTrackingCard() {
                 </Button>
             </CardHeader>
 
-            <div className="flex justify-between items-center h-[200px]">
+            <CardContent className="flex justify-between items-center h-[200px] p-0">
                 <div className="w-[50%] space-y-2">
                     {referralStats.map((item, index) => (
                         <Card key={index} className="bg-[#0d1224]/90 backdrop-blur-xl border-none rounded-2xl p-3 shadow-lg flex flex-row justify-between items-center">
-                            <CardContent className="p-0">
-                                <CardTitle className="text-sm text-white/70 mb-1">{item.title}</CardTitle>
+                            <CardHeader className="p-0 w-full">
+                                <CardTitle className="text-sm text-white/70">{item.title}</CardTitle>
                                 <CardDescription>
                                     <div className="text-lg font-bold text-white">
                                         {item.value}
                                     </div>
                                 </CardDescription>
-                            </CardContent>
+                            </CardHeader>
                         </Card>
 
                     ))}
@@ -73,7 +72,7 @@ export function ReferralTrackingCard() {
                         <p className="text-sm text-white/60">Total Score</p>
                     </div>
                 </div> */}
-            </div>
+            </CardContent>
         </Card>
     );
 }

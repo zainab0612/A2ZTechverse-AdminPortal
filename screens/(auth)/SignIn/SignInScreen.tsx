@@ -41,7 +41,7 @@ export const SignIn = () => {
 
     return (
         <>
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col justify-center items-center h-screen gap-3">
                 <div className="flex justify-center items-center">
                     <Image src={Logo} alt="Logo" className="h-28 w-72" />
                 </div>
@@ -83,7 +83,6 @@ export const SignIn = () => {
                                             required
                                             onChange={(e) => setPassword(e.target.value)}
                                         />
-
                                         <Button
                                             variant="transparent"
                                             type="button"

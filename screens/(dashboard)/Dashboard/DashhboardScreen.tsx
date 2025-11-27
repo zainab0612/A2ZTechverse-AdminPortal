@@ -14,6 +14,7 @@ import { SalesOverview } from '@/components/charts/SalesOverview';
 import ActiveUsersCard from '@/components/charts/ActiveUserCharts';
 import { SatisfactionRateCard } from '@/components/cards/SatisfactionRates';
 import { ReferralTrackingCard } from '@/components/cards/ReferralTracking';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 
 const orders = [
     {
@@ -86,29 +87,29 @@ export const DashhboardScreen = () => {
                 </div>
                 <div className="flex gap-5">
                     <ProjectTable variant='dashboard' showMembers={true} actions={false} menu={true} status={false} description={true} />
-                    <div className="rounded-2xl bg-linear-to-r from-[#0d0f24] to-[#185672] p-6 text-white shadow-xl w-[30%]">
-                        <div className="flex flex-col gap-4 justify-between mb-6">
-                            <div>
-                                <h1 className="font-bold text-xl">Orders overview</h1>
-                                <p className="text-white/60 text-sm flex gap-2"><Check /> +30% this month</p>
-                            </div>
-                            <div className="mt-6 space-y-6">
-                                {orders.map((order, i) => (
-                                    <div key={i} className="flex items-start gap-3">
-                                        <ItemMedia>
-                                            {order.icon}
-                                        </ItemMedia>
-                                        <Item className='p-0'>
-                                            <ItemContent>
-                                                <ItemTitle>{order.title}</ItemTitle>
-                                                <ItemDescription className="text-white/60 text-xs mt-1">{order.date}</ItemDescription>
-                                            </ItemContent>
-                                        </Item>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
+                    <Card className="rounded-2xl bg-linear-to-r from-[#0d0f24] to-[#185672] p-6 text-white shadow-xl w-[30%] border-none">
+                        <CardHeader className="p-0">
+                            <CardTitle className="text-xl font-bold">Orders overview</CardTitle>
+                            <CardDescription className="font-bold text-sm text-white/70">
+                                +30% <span className="font-normal">this month</span>
+                            </CardDescription>
+                        </CardHeader>
+                        <CardContent className="mt-6 space-y-6">
+                            {orders.map((order, i) => (
+                                <div key={i} className="flex items-start gap-3">
+                                    <ItemMedia>
+                                        {order.icon}
+                                    </ItemMedia>
+                                    <Item className='p-0'>
+                                        <ItemContent>
+                                            <ItemTitle>{order.title}</ItemTitle>
+                                            <ItemDescription className="text-white/60 text-xs mt-1">{order.date}</ItemDescription>
+                                        </ItemContent>
+                                    </Item>
+                                </div>
+                            ))}
+                        </CardContent>
+                    </Card>
                 </div>
             </main>
 

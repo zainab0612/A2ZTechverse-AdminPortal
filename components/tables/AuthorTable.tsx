@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/table"
 import { Avatar, AvatarImage } from "@/components/ui/avatar"
 import Link from 'next/link';
+import { Card, CardContent, CardTitle } from '../ui/card';
 
 const tableHeaders = ["AUTHOR", "FUNCTION", "STATUS", "EMPLOYED", "ACTION"];
 const authors = [
@@ -70,54 +71,55 @@ const authors = [
 
 export const AuthorsTable = () => {
     return (
-        <div className="rounded-2xl bg-linaer-to-br from-[#0A124A] to-[#0A0D2D] px-6 text-white shadow-xl w-full">
-            <h1 className="font-bold text-xl mb-2">Authors table</h1>
-
-            <Table>
-                <TableHeader>
-                    <TableRow className="border-none">
-                        {tableHeaders.map((head, index) => (
-                            <TableHead key={index} className="text-white/60 text-xs">
-                                {head}
-                            </TableHead>
-                        ))}
-                    </TableRow>
-                </TableHeader>
-                <TableBody>
-                    {authors.map((a, i) => (
-                        <TableRow key={i} className="border-t border-white/10 hover:bg-white/5 transition">
-                            <TableCell className="flex items-center gap-3 py-4">
-                                <Avatar className="w-10 h-10">
-                                    <AvatarImage src={a.image} />
-                                </Avatar>
-                                <div className="flex flex-col">
-                                    <span className="font-semibold">{a.name}</span>
-                                    <span className="text-xs text-white/60">{a.email}</span>
-                                </div>
-                            </TableCell>
-                            <TableCell className="text-sm font-medium">
-                                <div className="flex flex-col">
-                                    <span>{a.role}</span>
-                                    <span className="text-xs text-white/60">{a.detail}</span>
-                                </div>
-                            </TableCell>
-                            <TableCell>
-                                <span className={`px-3 py-1 text-xs rounded-md font-medium
-                                    ${a.status === "Online" ? "bg-green-600" : "border border-white"}`
-                                }>
-                                    {a.status}
-                                </span>
-                            </TableCell>
-                            <TableCell className="font-bold">{a.employed}</TableCell>
-                            <TableCell className="text-sm text-white/60 cursor-pointer">
-                                <Link href='/dashboard'>
-                                    Edit
-                                </Link>
-                            </TableCell>
+        <Card className="rounded-2xl bg-linaer-to-br from-[#0A124A] to-[#0A0D2D] px-6 text-white shadow-xl w-full borde-none">
+            <CardTitle className="font-bold text-xl mb-2">Authors table</CardTitle>
+            <CardContent className='p-0'>
+                <Table>
+                    <TableHeader>
+                        <TableRow className="border-none">
+                            {tableHeaders.map((head, index) => (
+                                <TableHead key={index} className="text-white/60 text-xs">
+                                    {head}
+                                </TableHead>
+                            ))}
                         </TableRow>
-                    ))}
-                </TableBody>
-            </Table>
-        </div>
+                    </TableHeader>
+                    <TableBody>
+                        {authors.map((a, i) => (
+                            <TableRow key={i} className="border-t border-white/10 hover:bg-white/5 transition">
+                                <TableCell className="flex items-center gap-3 py-4">
+                                    <Avatar className="w-10 h-10">
+                                        <AvatarImage src={a.image} />
+                                    </Avatar>
+                                    <div className="flex flex-col">
+                                        <span className="font-semibold">{a.name}</span>
+                                        <span className="text-xs text-white/60">{a.email}</span>
+                                    </div>
+                                </TableCell>
+                                <TableCell className="text-sm font-medium">
+                                    <div className="flex flex-col">
+                                        <span>{a.role}</span>
+                                        <span className="text-xs text-white/60">{a.detail}</span>
+                                    </div>
+                                </TableCell>
+                                <TableCell>
+                                    <span className={`px-3 py-1 text-xs rounded-md font-medium
+                                    ${a.status === "Online" ? "bg-green-600" : "border border-white"}`
+                                    }>
+                                        {a.status}
+                                    </span>
+                                </TableCell>
+                                <TableCell className="font-bold">{a.employed}</TableCell>
+                                <TableCell className="text-sm text-white/60 cursor-pointer">
+                                    <Link href='/dashboard'>
+                                        Edit
+                                    </Link>
+                                </TableCell>
+                            </TableRow>
+                        ))}
+                    </TableBody>
+                </Table>
+            </CardContent>
+        </Card>
     )
 }

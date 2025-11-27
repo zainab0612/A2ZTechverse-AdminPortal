@@ -63,21 +63,18 @@ export default function ActiveUsersCard() {
 
             <div className="w-full h-[260px] rounded-2xl px-4">
                 <ChartContainer config={chartConfig} className="h-[280px] w-full">
-                    <BarChart data={data}>
-
+                    <BarChart data={data} barCategoryGap={'40%'}>
                         <XAxis
                             dataKey="month"
                             stroke="#ffffff90"
                             tick={{ fill: "#ffffff90", fontSize: 12 }}
                         />
-
                         <YAxis
                             stroke="#ffffff90"
                             tick={{ fill: "#ffffff90", fontSize: 12 }}
                         />
                         <Tooltip />
-                        <Bar dataKey="value" fill="#d6d6d6" radius={4} />
-
+                        <Bar dataKey="value" fill="#d6d6d6" radius={[6, 6, 0, 0]} />
                     </BarChart>
                 </ChartContainer>
             </div>

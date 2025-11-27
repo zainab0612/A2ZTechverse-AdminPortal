@@ -37,8 +37,8 @@ export function SalesOverview() {
         <Card className="bg-linear-to-br from-[#0d0f24] to-[#185672] border-none text-white rounded-2xl shadow-xl p-4 w-full">
             <CardHeader>
                 <CardTitle className="text-white text-xl">Sales Overview</CardTitle>
-                <CardDescription className="font-semibold">
-                    +5% more in 2021
+                <CardDescription className="text-green-400 font-semibold text-sm">
+                    +5% more <span className="text-white/70">in 2021</span>
                 </CardDescription>
             </CardHeader>
             <CardContent className="h-[350px]">

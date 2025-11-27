@@ -24,7 +24,7 @@ const items = [
     { title: "Dashboard", url: "/dashboard", icon: Home },
     { title: "Tables", url: "/tables", icon: Inbox },
     { title: "Billing", url: "/billing", icon: Calendar },
-    { title: "RTL", url: "/rtl", icon: Settings },
+    { title: "Settings", url: "/rtl", icon: Settings },
 ];
 
 export function AppSidebar() {
